@@ -39,7 +39,7 @@ class ProductVariables(BaseVariables):
         return self.product.current_inventory
 
     @numeric_rule_variable(label='Days until expiration')
-    def expiration_days(self)
+    def expiration_days(self):
         last_order = self.product.orders[-1]
         return (last_order.expiration_date - datetime.date.today()).days
 
